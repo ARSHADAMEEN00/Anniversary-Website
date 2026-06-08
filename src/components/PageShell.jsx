@@ -1,0 +1,15 @@
+import { motion } from 'framer-motion';
+
+export default function PageShell({ children, className = '' }) {
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 26 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -18 }}
+      transition={{ duration: 0.55, ease: 'easeOut' }}
+      className={`mx-auto min-h-screen w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 ${className}`}
+    >
+      {children}
+    </motion.section>
+  );
+}

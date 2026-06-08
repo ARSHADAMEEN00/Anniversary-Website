@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(244, 114, 182, 0.32);
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.3));
+  box-shadow: 0 30px 90px rgba(190, 24, 93, 0.18);
+  backdrop-filter: blur(22px);
+}
+
+.dark .glass {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: linear-gradient(145deg, rgba(60, 18, 51, 0.78), rgba(32, 12, 34, 0.55));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+}
+
+.gold-text {
+  background: linear-gradient(100deg, #b7791f, #f7d276, #a16207);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.premium-border {
+  position: relative;
+}
+
+.premium-border::before {
+  position: absolute;
+  inset: 12px;
+  pointer-events: none;
+  content: '';
+  border: 1px solid rgba(214, 168, 82, 0.62);
+  border-radius: inherit;
+}
+
+.certificate-paper {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(249, 168, 212, 0.18), transparent 26%),
+    radial-gradient(circle at 80% 0%, rgba(251, 191, 36, 0.18), transparent 24%),
+    linear-gradient(135deg, #fffaf0, #fff1f7 42%, #fff7ed);
+}
+
+.dark .certificate-paper {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(249, 168, 212, 0.15), transparent 26%),
+    radial-gradient(circle at 80% 0%, rgba(251, 191, 36, 0.16), transparent 24%),
+    linear-gradient(135deg, #2a1028, #3b1433 44%, #261021);
+}
+
+.memory-sprite {
+  background-image: url('/images/memory-sheet.png');
+  background-size: 400% 200%;
+  background-repeat: no-repeat;
+}
+
+.heart-shadow {
+  filter: drop-shadow(0 14px 18px rgba(244, 63, 94, 0.22));
+}
