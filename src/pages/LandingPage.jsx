@@ -5,6 +5,10 @@ import WashiTape from '../components/WashiTape.jsx';
 import Paperclip from '../components/Paperclip.jsx';
 import Stamp from '../components/Stamp.jsx';
 import DriedFlower from '../components/DriedFlower.jsx';
+import firstMeetImg from '../assets/Images/first_meet.png';
+import firstPhotoImg from '../assets/Images/first_photo.jpg';
+import firstEidImg from '../assets/Images/first_eid.jpg';
+
 import './LandingPage.css';
 
 export default function LandingPage() {
@@ -153,39 +157,94 @@ export default function LandingPage() {
         <div className="memory-card">
           <Paperclip top="-20px" right="40px" rotation="8deg" />
           <DriedFlower bottom="10px" right="-20px" rotation="-30deg" scale={0.8} />
-          <div className="memory-date-tag">✦ July 24, 2025</div>
+          
+          {/* Cute Cartoon Image at bottom right */}
+          <img 
+            src={firstMeetImg} 
+            alt="Lovebirds doodle" 
+            style={{
+              position: 'absolute',
+              bottom: '-15px',
+              right: '-10px',
+              width: '110px',
+              opacity: 0.9,
+              mixBlendMode: 'multiply',
+              transform: 'rotate(-5deg)',
+              pointerEvents: 'none',
+              zIndex: 5
+            }}
+          />
+
+          <div className="memory-date-tag">May 30, 2025</div>
           <div className="memory-title">The Day Everything Changed</div>
           <div className="memory-text">
-            You walked down that aisle in white and I forgot how to breathe. Every promise felt like a forever I was ready for.
+            {/* We were both trying not to smile too much. We failed. ❤️ */}
+            We stood a few feet apart, yet somehow it felt like destiny had already brought us together. Between shy smiles and stolen glances, our story quietly began.
+            {/* You walked down that aisle in white and I forgot how to breathe. Every promise felt like a forever I was ready for. */}
           </div>
           <div className="memory-stickers">
-            <span className="sticker-pill">💍 Kerala</span>
-            <span className="sticker-pill">🌸 Monsoon</span>
-            <span className="sticker-pill">💒 Church Wedding</span>
+            <span className="sticker-pill">💍 Beginning of Forever</span>
           </div>
         </div>
-        <div className="memory-card" style={{ borderLeftColor: 'var(--sage)' }}>
+        <div className="memory-card" style={{ borderLeftColor: 'var(--sage)', minHeight: '220px' }}>
           <WashiTape top="-12px" left="30px" color="var(--sage-light)" width="120px" height="30px" rotation="-2deg" />
-          <Stamp top="20%" right="5%" size="100px" color="rgba(121, 137, 115, 0.4)" rotation="-25deg" />
-          <div className="memory-date-tag" style={{ color: 'var(--sage)' }}>✦ December 2020</div>
-          <div className="memory-title">Our First Home, Our First Christmas</div>
-          <div className="memory-text">
-            Tiny kitchen, mismatched mugs, fairy lights strung by hand. That was the best version of home we've ever made.
+          <Stamp top="62%" right="-8%" size="100px" color="rgba(121, 137, 115, 0.4)" rotation="-25deg" />
+          
+          {/* Photo floated to the left to let text wrap around it */}
+          <img 
+            src={firstPhotoImg} 
+            alt="First Photo" 
+            style={{
+              float: 'left',
+              width: '95px',
+              border: '6px solid #FFFEF9',
+              boxShadow: '0 4px 12px rgba(44, 26, 14, 0.15)',
+              transform: 'rotate(-4deg)',
+              margin: '15px 20px 10px -5px',
+              position: 'relative',
+              zIndex: 5
+            }}
+          />
+
+          <div style={{ position: 'relative', zIndex: 6 }}>
+            <div className="memory-date-tag" style={{ color: 'var(--sage)' }}>July 24 2025</div>
+            <div className="memory-title">Our First Photo, and hug</div>
+            <div className="memory-text" style={{ paddingRight: '10px' }}>
+              Our First Hug 🤗, Home at Last 
+              I still remember the warmth of your arms the first time we hugged. 
+            </div>
+            <div className="memory-stickers">
+              {/* Keeping empty stickers if user wants to fill them later */}
+            </div>
           </div>
-          <div className="memory-stickers">
-            <span className="sticker-pill">🏠 New Home</span>
-            <span className="sticker-pill">🎄 First Christmas</span>
-          </div>
+          <div style={{ clear: 'both' }}></div>
         </div>
         <div className="memory-card" style={{ borderLeftColor: 'var(--gold)' }}>
-          <div className="memory-date-tag" style={{ color: 'var(--gold)' }}>✦ 2023</div>
-          <div className="memory-title">The Year We Grew</div>
+          {/* Cute Cartoon Image peeking from the top */}
+          <img 
+            src={firstEidImg} 
+            alt="Lovebirds doodle" 
+            style={{
+              position: 'absolute',
+              top: '-30px',
+              right: '30px',
+              width: '115px',
+              opacity: 0.9,
+              mixBlendMode: 'multiply',
+              transform: 'rotate(-8deg)',
+              pointerEvents: 'none',
+              zIndex: 5
+            }}
+          />
+          <div className="memory-date-tag" style={{ color: 'var(--gold)' }}>03 . 21 . 2026</div>
+          <div className="memory-title">The First EID</div>
           <div className="memory-text">
-            Late nights and quiet mornings. You held everything together with a grace I still can't find words for.
+            Our first Eid. Our first blessing together.
+            A blessed day, a beautiful memory, a forever kind of love. ❤️🌙
           </div>
           <div className="memory-stickers">
-            <span className="sticker-pill">🌿 Growth</span>
-            <span className="sticker-pill">💛 Together</span>
+            {/* <span className="sticker-pill"></span> */}
+            {/* <span className="sticker-pill"></span> */}
           </div>
         </div>
       </section>
