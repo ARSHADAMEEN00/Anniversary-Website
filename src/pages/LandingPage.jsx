@@ -1,6 +1,10 @@
 import React from 'react';
 import { couple } from '../data/couple.js';
 import TornPaperEdge from '../components/TornPaperEdge.jsx';
+import WashiTape from '../components/WashiTape.jsx';
+import Paperclip from '../components/Paperclip.jsx';
+import Stamp from '../components/Stamp.jsx';
+import DriedFlower from '../components/DriedFlower.jsx';
 import './LandingPage.css';
 
 export default function LandingPage() {
@@ -29,7 +33,7 @@ export default function LandingPage() {
         </div>
         <div className="hero-eyebrow">✦ Our Anniversary Journal ✦</div>
         <h1 className="hero-title" style={{ fontSize: '3.5rem' }}>
-          To My <em>LOVE</em><br/>Munnu
+          To My <em style={{ fontFamily: '"Dancing Script", cursive', fontSize: '1.3em', fontWeight: 600, color: 'var(--gold)', fontStyle: 'normal' }}>Love</em><br/>Munnu
         </h1>
         <div className="hero-divider" />
         <div className="hero-date">2025 — Infinity</div>
@@ -70,7 +74,8 @@ export default function LandingPage() {
         <div className="polaroid-grid">
           {/* Card 1 */}
           <div className="polaroid">
-            <div className="washi washi-rose" />
+            <Paperclip top="-15px" left="20px" rotation="-12deg" />
+            <DriedFlower top="30%" right="-30px" rotation="25deg" scale={0.7} />
             <div className="sticker" style={{ top: '10px', right: '10px' }}>🌹</div>
             <div className="photo-placeholder bg-rose-grad">
               <span className="photo-icon">📷</span>
@@ -93,6 +98,7 @@ export default function LandingPage() {
           {/* Card 3 */}
           <div className="polaroid">
             <div className="washi washi-gold" />
+            <Stamp top="65%" right="-10px" rotation="15deg" size="80px" />
             <div className="sticker" style={{ top: '12px', left: '10px' }}>✨</div>
             <div className="photo-placeholder bg-gold-grad">
               <span className="photo-icon">📷</span>
@@ -145,6 +151,8 @@ export default function LandingPage() {
           <div className="spread-rule" />
         </div>
         <div className="memory-card">
+          <Paperclip top="-20px" right="40px" rotation="8deg" />
+          <DriedFlower bottom="10px" right="-20px" rotation="-30deg" scale={0.8} />
           <div className="memory-date-tag">✦ July 24, 2025</div>
           <div className="memory-title">The Day Everything Changed</div>
           <div className="memory-text">
@@ -157,6 +165,8 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="memory-card" style={{ borderLeftColor: 'var(--sage)' }}>
+          <WashiTape top="-12px" left="30px" color="var(--sage-light)" width="120px" height="30px" rotation="-2deg" />
+          <Stamp top="20%" right="5%" size="100px" color="rgba(121, 137, 115, 0.4)" rotation="-25deg" />
           <div className="memory-date-tag" style={{ color: 'var(--sage)' }}>✦ December 2020</div>
           <div className="memory-title">Our First Home, Our First Christmas</div>
           <div className="memory-text">
