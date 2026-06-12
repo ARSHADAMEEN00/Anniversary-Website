@@ -47,9 +47,9 @@ export default function VideoReels() {
       </div>
 
       {reels.length ? (
-        <div className="reels-scroll mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-4">
           {reels.map((reel) => (
-            <article key={reel.id} className="w-36 shrink-0 snap-start sm:w-40">
+            <article key={reel.id} className="w-full">
               <div className="reel-video-frame aspect-[9/16] overflow-hidden rounded-[1.4rem]">
                 <video
                   src={reel.source}
