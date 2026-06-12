@@ -1,14 +1,22 @@
 import React from 'react';
+import { couple } from '../data/couple.js';
 import './LandingPage.css';
 
 export default function LandingPage() {
+  const today = new Date();
+  const weddingDateObj = new Date(couple.weddingDate);
+  const timeDiff = Math.max(0, today.getTime() - weddingDateObj.getTime());
+  const diffDays = Math.floor(timeDiff / (1000 * 3600 * 24));
+  const diffYears = Math.floor(diffDays / 365);
+  const displayDays = diffDays.toLocaleString();
+
   return (
     <>
       {/* NAV */}
       <nav className="nav">
         <div className="nav-brand">Our <span>Story</span></div>
         <div className="nav-heart">♥</div>
-        <div className="nav-year">Est. 2019</div>
+        <div className="nav-year">Est. 2025 July 24</div>
       </nav>
 
       {/* HERO */}
@@ -19,26 +27,26 @@ export default function LandingPage() {
           <span className="fh" style={{ left: '40%', bottom: '10%', animationDelay: '6s' }}>♥</span>
         </div>
         <div className="hero-eyebrow">✦ Our Anniversary Journal ✦</div>
-        <h1 className="hero-title">
-          A <em>Love</em><br/>Story
+        <h1 className="hero-title" style={{ fontSize: '3.5rem' }}>
+          To My <em>LOVE</em><br/>Munnu
         </h1>
         <div className="hero-divider" />
-        <div className="hero-date">June · 2019 — 2026</div>
-        <div className="hero-subtitle">Seven chapters of us, written in moments</div>
+        <div className="hero-date">2025 — Infinity</div>
+        <div className="hero-subtitle">A lifetime of us, written in moments</div>
       </section>
 
       {/* RIBBON */}
-      <div className="ribbon">Happy 7th Wedding Anniversary</div>
+      <div className="ribbon">July 24, 2025</div>
 
       {/* STATS */}
       <div className="stats-row">
         <div className="stat-item">
-          <span className="stat-num">7</span>
+          <span className="stat-num">{diffYears}</span>
           <span className="stat-label">Years</span>
         </div>
         <div className="stat-div" />
         <div className="stat-item">
-          <span className="stat-num">2,555</span>
+          <span className="stat-num">{displayDays}</span>
           <span className="stat-label">Days Together</span>
         </div>
         <div className="stat-div" />
@@ -100,7 +108,7 @@ export default function LandingPage() {
           <div className="spread-rule" />
         </div>
         <div className="memory-card">
-          <div className="memory-date-tag">✦ June 12, 2019</div>
+          <div className="memory-date-tag">✦ July 24, 2025</div>
           <div className="memory-title">The Day Everything Changed</div>
           <div className="memory-text">
             You walked down that aisle in white and I forgot how to breathe. Every promise felt like a forever I was ready for.
@@ -147,7 +155,7 @@ export default function LandingPage() {
           <div className="timeline-dot" />
           <div className="timeline-content">
             <span className="timeline-emoji">💍</span>
-            <div className="timeline-year">2019</div>
+            <div className="timeline-year">2025</div>
             <div className="timeline-event">We said I do. The world stopped for a moment, just for us.</div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 export const couple = {
-  wifeName: 'Shahma P',
+  wifeName: 'Munnu',
   husbandName: 'Ameen Arshad Nediya',
-  weddingDate: '2025-06-24',
+  weddingDate: '2025-07-24',
   contractSection: 'Section 143 of the Husband Protection Act',
   certificatePhotoMomentId: 'recent-cozy-portrait',
 };
