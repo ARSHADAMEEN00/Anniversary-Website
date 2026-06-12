@@ -21,7 +21,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative overflow-x-hidden bg-ice text-lightBlue-950 transition-colors duration-500 dark:bg-midnight dark:text-lightBlue-50">
+    <div
+      className="relative overflow-x-hidden transition-colors duration-500"
+      style={{ background: '#FDF8F2', color: '#2C1A0E', minHeight: '100vh' }}
+    >
       <BackgroundAura />
       <FloatingHearts />
       

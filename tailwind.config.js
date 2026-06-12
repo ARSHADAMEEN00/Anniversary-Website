@@ -5,10 +5,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Cormorant Garamond', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
         script: ['Dancing Script', 'cursive'],
+        garamond: ['Cormorant Garamond', 'serif'],
       },
       colors: {
+        // Legacy blue colors (kept for any remaining references)
         lightBlue: {
           50: '#e1f5fe',
           100: '#b3e5fc',
@@ -22,13 +25,33 @@ export default {
           900: '#01579b',
           950: '#06324a',
         },
+        // Journal palette
+        ivory: '#FDF8F2',
+        cream: '#F5EDE0',
+        parchment: '#EDE0CC',
+        espresso: '#2C1A0E',
+        'warm-dark': '#3D2314',
+        rose: {
+          DEFAULT: '#C4917A',
+          light: '#E8C5B5',
+        },
+        sage: {
+          DEFAULT: '#8FAE8B',
+          light: '#C5D9C3',
+        },
+        gold: {
+          DEFAULT: '#C9963A',
+          light: '#E8C97A',
+        },
+        blush: '#F2D9CE',
+        // Legacy
         ice: '#f4fbfe',
         ocean: '#075985',
         midnight: '#031c2b',
       },
       boxShadow: {
-        glow: '0 24px 80px rgba(41, 182, 246, 0.3)',
-        'soft-blue': '0 18px 60px rgba(2, 136, 209, 0.24)',
+        glow: '0 24px 80px rgba(196, 145, 122, 0.32)',
+        'soft-rose': '0 18px 60px rgba(196, 145, 122, 0.24)',
       },
       animation: {
         floaty: 'floaty 8s ease-in-out infinite',

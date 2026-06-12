@@ -8,7 +8,14 @@ export default function MusicToggle() {
     <button
       type="button"
       onClick={toggle}
-      className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/55 px-4 py-2 text-sm font-extrabold text-lightBlue-900 shadow-lg backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/75 dark:border-lightBlue-200/20 dark:bg-lightBlue-900/20 dark:text-lightBlue-50"
+      className="inline-flex items-center gap-2 rounded-none px-4 py-2 text-sm font-extrabold shadow-lg backdrop-blur-xl transition hover:-translate-y-0.5"
+      style={{
+        border: '1px solid rgba(201,150,58,0.35)',
+        background: 'rgba(253,248,242,0.88)',
+        color: '#2C1A0E',
+        fontFamily: "'Cormorant Garamond', serif",
+        letterSpacing: '0.04em',
+      }}
     >
       <Music size={17} />
       {playing ? <Volume2 size={17} /> : <VolumeX size={17} />}

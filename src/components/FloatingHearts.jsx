@@ -13,13 +13,14 @@ export default function FloatingHearts() {
       {hearts.map((heart) => (
         <span
           key={heart.id}
-          className="absolute -bottom-12 heart-shadow animate-floaty text-lightBlue-500 dark:text-lightBlue-300"
+          className="absolute -bottom-12 heart-shadow animate-floaty"
           style={{
             left: heart.left,
             animationDelay: heart.delay,
             animationDuration: heart.duration,
             fontSize: heart.size,
             opacity: heart.opacity,
+            color: '#C4917A',
           }}
         >
           ♥

@@ -33,11 +33,52 @@ export default function CertificatePage() {
     <PageShell className="!h-auto !min-h-screen !overflow-visible pb-24 pt-20">
       <div className="mx-auto max-w-5xl">
         <div className="mb-8 text-center">
-          <p className="text-sm font-black uppercase tracking-[0.34em] text-lightBlue-900 dark:text-lightBlue-200">
+          <p
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: '0.72rem',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.34em',
+              color: '#C9963A',
+            }}
+          >
             Renewal Certificate
           </p>
-          <h1 className="mt-3 text-4xl font-black sm:text-6xl">Officially renewed. Very serious.</h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base font-semibold leading-relaxed text-lightBlue-950/75 dark:text-lightBlue-100/75">
+
+          {/* Gold divider */}
+          <div
+            style={{
+              width: 48,
+              height: 1,
+              background: 'linear-gradient(to right, transparent, #C9963A, transparent)',
+              margin: '14px auto',
+            }}
+          />
+
+          <h1
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: 'clamp(2rem, 6vw, 3.5rem)',
+              fontWeight: 400,
+              fontStyle: 'italic',
+              color: '#2C1A0E',
+              lineHeight: 1.1,
+              marginTop: 4,
+            }}
+          >
+            Officially renewed. Very serious.
+          </h1>
+          <p
+            className="mx-auto mt-5 max-w-2xl"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontStyle: 'italic',
+              fontSize: '1rem',
+              lineHeight: 1.8,
+              color: 'rgba(61,35,20,0.72)',
+            }}
+          >
             Your certificate is ready for saving, sharing, and emotionally waving around.
           </p>
         </div>
@@ -45,12 +86,29 @@ export default function CertificatePage() {
         <CertificateCard ref={certificateRef} />
 
         <GlassCard className="mx-auto mt-8 max-w-3xl p-6 text-center">
-          <p className="font-script text-4xl text-lightBlue-900 dark:text-lightBlue-100 sm:text-5xl">
+          <p
+            style={{
+              fontFamily: "'Dancing Script', cursive",
+              fontSize: 'clamp(1.5rem, 4vw, 2.2rem)',
+              color: '#3D2314',
+              lineHeight: 1.5,
+            }}
+          >
             <Typewriter
               speed={55}
               text={'I would still choose you. In every lifetime. In every version of our story. Happy Anniversary ❤️'}
             />
           </p>
+
+          {/* Decorative flourish */}
+          <div
+            style={{
+              width: 48,
+              height: 1,
+              background: 'linear-gradient(to right, transparent, #C9963A, transparent)',
+              margin: '20px auto',
+            }}
+          />
 
           <div className="mt-7 grid gap-3 sm:grid-cols-3">
             <PrimaryButton
@@ -81,7 +139,12 @@ export default function CertificatePage() {
           </div>
 
           {status ? (
-            <p className="mt-4 text-sm font-bold text-lightBlue-800 dark:text-lightBlue-100">{status}</p>
+            <p
+              className="mt-4 text-sm font-bold"
+              style={{ color: '#8FAE8B', fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              {status}
+            </p>
           ) : null}
         </GlassCard>
       </div>

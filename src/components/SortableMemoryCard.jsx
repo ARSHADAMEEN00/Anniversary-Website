@@ -13,19 +13,21 @@ export default function SortableMemoryCard({ moment, position, isCorrect }) {
     transition,
     zIndex: isDragging ? 20 : undefined,
     touchAction: 'none',
+    background: '#EDE0CC',
   };
 
   return (
     <article
       ref={setNodeRef}
       style={style}
-      className={`group relative min-w-0 bg-lightBlue-100 transition ${
+      className={`group relative min-w-0 transition ${
         isDragging ? 'z-20 scale-[1.03] shadow-2xl' : ''
       }`}
     >
       <button
         type="button"
-        className="relative block aspect-square w-full touch-none select-none cursor-grab overflow-hidden text-left outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-lightBlue-400 active:cursor-grabbing"
+        className="relative block aspect-square w-full touch-none select-none cursor-grab overflow-hidden text-left outline-none active:cursor-grabbing"
+        style={{ outlineOffset: 0 }}
         aria-label={`Drag ${moment.title}, currently in position ${position}`}
         {...attributes}
         {...listeners}

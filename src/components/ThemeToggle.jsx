@@ -7,7 +7,12 @@ export default function ThemeToggle({ theme, setTheme }) {
     <button
       type="button"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="fixed right-4 top-4 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-white/55 text-lightBlue-950 shadow-lg backdrop-blur-xl transition hover:scale-105 hover:bg-white/75 dark:border-lightBlue-200/20 dark:bg-lightBlue-900/20 dark:text-lightBlue-50 sm:right-6 sm:top-6"
+      className="fixed right-4 top-4 z-20 inline-flex h-11 w-11 items-center justify-center rounded-none shadow-lg backdrop-blur-xl transition hover:scale-105 sm:right-6 sm:top-6"
+      style={{
+        border: '1px solid rgba(201,150,58,0.35)',
+        background: 'rgba(253,248,242,0.88)',
+        color: '#2C1A0E',
+      }}
       aria-label="Toggle romantic theme"
     >
       {isDark ? <Sun size={19} /> : <Moon size={19} />}

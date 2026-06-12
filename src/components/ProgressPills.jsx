@@ -8,13 +8,14 @@ export default function ProgressPills({ total, correct }) {
             key={index}
             className={`h-2.5 rounded-full transition-all duration-500 ${
               filled
-                ? 'w-9 bg-gradient-to-r from-lightBlue-700 to-lightBlue-300 shadow-lg shadow-lightBlue-300/40'
-                : 'w-2.5 bg-white/60 dark:bg-white/20'
+                ? 'w-9'
+                : 'w-2.5'
             }`}
+            style={filled ? { background: 'linear-gradient(to right, #C9963A, #C4917A)', boxShadow: '0 4px 12px rgba(196,145,122,0.4)' } : { background: 'rgba(196,145,122,0.2)' }}
           />
         );
       })}
-      <span className="ml-2 text-sm font-extrabold text-lightBlue-800 dark:text-lightBlue-100">
+      <span className="ml-2 text-sm font-extrabold" style={{ color: '#C9963A', fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.08em' }}>
         {correct}/{total} restored
       </span>
     </div>

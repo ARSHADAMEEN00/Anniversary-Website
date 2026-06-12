@@ -127,35 +127,99 @@ export default function PuzzlePage() {
     <PageShell className="!h-auto !min-h-screen py-16 md:!h-screen md:py-4">
       <div className="mx-auto w-full max-w-2xl">
         <div className="mb-4 px-5 text-center">
-          <p className="text-[0.68rem] font-black uppercase tracking-[0.32em] text-lightBlue-900 dark:text-lightBlue-200">
+          <p
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: '0.68rem',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.32em',
+              color: '#C9963A',
+            }}
+          >
             Love Story Security Check
           </p>
           {stage === 'timeline' ? (
-            <h1 className="mt-1.5 text-2xl font-black tracking-tight sm:text-4xl">
+            <h1
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: 'clamp(1.6rem, 5vw, 2.4rem)',
+                fontWeight: 400,
+                fontStyle: 'italic',
+                color: '#2C1A0E',
+                marginTop: 6,
+              }}
+            >
               Prove you belong in this timeline.
             </h1>
           ) : null}
-          <p className="mx-auto mt-1.5 max-w-xl text-sm font-semibold text-lightBlue-950/65 dark:text-lightBlue-100/65">
+          <p
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: '0.9rem',
+              color: 'rgba(61,35,20,0.65)',
+              marginTop: 6,
+              maxWidth: 480,
+              margin: '6px auto 0',
+            }}
+          >
             Complete both verification steps to unlock the renewal ceremony.
           </p>
         </div>
 
-        <div className="light-surface overflow-hidden rounded-[1.4rem] border border-lightBlue-200/80 bg-[#fafdff] shadow-[0_24px_70px_rgba(2,119,189,0.24)] dark:border-lightBlue-200/40">
+        {/* Main card */}
+        <div
+          className="light-surface overflow-hidden"
+          style={{
+            borderRadius: 4,
+            border: '1px solid rgba(201,150,58,0.25)',
+            background: '#FFFEF9',
+            boxShadow: '0 24px 70px rgba(44,26,14,0.14)',
+          }}
+        >
           {stage === 'timeline' ? (
             <>
+              {/* Timeline panel header */}
               <div className="blue-panel-header relative overflow-hidden px-5 py-5 text-left sm:px-7 sm:py-6">
                 <div className="absolute -right-12 -top-14 h-36 w-36 rounded-full bg-white/10 blur-2xl" />
-                <div className="absolute -bottom-16 left-1/3 h-32 w-32 rounded-full bg-lightBlue-200/20 blur-2xl" />
+                <div className="absolute -bottom-16 left-1/3 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
                 <div className="relative flex items-start gap-3">
-                  <span className="mt-0.5 hidden h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/20 bg-white/10 sm:grid">
+                  <span
+                    className="mt-0.5 hidden h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/20 bg-white/10 sm:grid"
+                  >
                     <Sparkles size={20} />
                   </span>
                   <div>
-                    <p className="text-sm font-medium text-lightBlue-100">Arrange every memory in</p>
-                    <h2 className="text-2xl font-black leading-tight tracking-tight sm:text-3xl">
+                    <p
+                      style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: '0.85rem',
+                        color: 'rgba(253,248,242,0.8)',
+                        letterSpacing: '0.04em',
+                      }}
+                    >
+                      Arrange every memory in
+                    </p>
+                    <h2
+                      style={{
+                        fontFamily: "'Playfair Display', serif",
+                        fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+                        fontWeight: 400,
+                        fontStyle: 'italic',
+                        color: '#FDF8F2',
+                        lineHeight: 1.1,
+                      }}
+                    >
                       chronological order
                     </h2>
-                    <p className="mt-1 text-xs text-lightBlue-100/85 sm:text-sm">
+                    <p
+                      style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: '0.85rem',
+                        color: 'rgba(232,197,181,0.85)',
+                        marginTop: 4,
+                      }}
+                    >
                       Drag the photo tiles into the correct sequence.
                     </p>
                   </div>
@@ -171,7 +235,10 @@ export default function PuzzlePage() {
                   items={moments.map((moment) => moment.id)}
                   strategy={rectSortingStrategy}
                 >
-                  <div className="grid grid-cols-3 gap-1 bg-lightBlue-50 p-1">
+                  <div
+                    className="grid grid-cols-3 gap-1 p-1"
+                    style={{ background: '#EDE0CC' }}
+                  >
                     {moments.map((moment, index) => (
                       <SortableMemoryCard
                         key={moment.id}
@@ -184,18 +251,35 @@ export default function PuzzlePage() {
                 </SortableContext>
               </DndContext>
 
-              <div className="border-t border-lightBlue-100 bg-gradient-to-b from-white to-lightBlue-50/70 px-4 py-3.5 text-lightBlue-950 sm:px-5">
+              <div
+                className="px-4 py-3.5 sm:px-5"
+                style={{
+                  borderTop: '1px solid rgba(201,150,58,0.2)',
+                  background: 'linear-gradient(to bottom, #FFFEF9, rgba(253,248,242,0.7))',
+                  color: '#2C1A0E',
+                }}
+              >
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex min-w-0 items-center gap-1 text-lightBlue-900/65">
+                  <div className="flex min-w-0 items-center gap-1" style={{ color: 'rgba(44,26,14,0.6)' }}>
                     <button
                       type="button"
                       onClick={resetPuzzle}
-                      className="grid h-10 w-10 shrink-0 place-items-center rounded-xl transition hover:bg-lightBlue-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lightBlue-500"
+                      className="grid h-10 w-10 shrink-0 place-items-center rounded-xl transition focus-visible:outline-none"
+                      style={{ transition: 'background 0.2s' }}
+                      onMouseEnter={e => e.currentTarget.style.background = '#EDE0CC'}
+                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                       aria-label="Shuffle the timeline again"
                     >
                       <RotateCcw size={20} />
                     </button>
-                    <p className="truncate text-xs font-extrabold sm:text-sm">
+                    <p
+                      className="truncate"
+                      style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontWeight: 700,
+                        fontSize: '0.9rem',
+                      }}
+                    >
                       {correctCount}/{timelineMoments.length} in place
                     </p>
                   </div>
@@ -203,7 +287,13 @@ export default function PuzzlePage() {
                   <button
                     type="button"
                     onClick={verifyTimeline}
-                    className="blue-action-button shrink-0 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-[0.08em] transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lightBlue-500 focus-visible:ring-offset-2 sm:px-6 sm:text-sm"
+                    className="blue-action-button shrink-0 rounded-none px-4 py-2.5 transition hover:-translate-y-0.5 focus-visible:outline-none sm:px-6"
+                    style={{
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.12em',
+                    }}
                   >
                     Verify order
                   </button>
@@ -211,13 +301,22 @@ export default function PuzzlePage() {
 
                 {timelineFeedback ? (
                   <p
-                    className="mt-3 rounded-xl border border-red-100 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700"
+                    className="mt-3 px-3 py-2 text-sm font-semibold"
+                    style={{
+                      borderRadius: 2,
+                      border: '1px solid rgba(196,145,122,0.3)',
+                      background: '#FDF1E6',
+                      color: '#8B4513',
+                    }}
                     role="status"
                   >
                     {timelineFeedback.message}
                   </p>
                 ) : (
-                  <p className="mt-2 text-xs font-medium text-lightBlue-900/55">
+                  <p
+                    className="mt-2 text-xs font-medium"
+                    style={{ color: 'rgba(44,26,14,0.5)', fontFamily: "'Cormorant Garamond', serif" }}
+                  >
                     A small green tick marks each correctly placed memory.
                   </p>
                 )}
@@ -225,30 +324,77 @@ export default function PuzzlePage() {
             </>
           ) : (
             <>
+              {/* Question panel header */}
               <div className="blue-panel-header relative overflow-hidden px-5 py-5 text-left sm:px-7 sm:py-6">
                 <div className="absolute -right-12 -top-14 h-36 w-36 rounded-full bg-white/10 blur-2xl" />
-                <div className="absolute -bottom-16 left-1/3 h-32 w-32 rounded-full bg-lightBlue-200/20 blur-2xl" />
+                <div className="absolute -bottom-16 left-1/3 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
                 <div className="relative">
-                  <p className="text-sm font-medium text-lightBlue-100">Final verification</p>
-                  <h2 className="text-2xl font-black leading-tight tracking-tight sm:text-3xl">
+                  <p
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: '0.85rem',
+                      color: 'rgba(253,248,242,0.8)',
+                    }}
+                  >
+                    Final verification
+                  </p>
+                  <h2
+                    style={{
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+                      fontWeight: 400,
+                      fontStyle: 'italic',
+                      color: '#FDF8F2',
+                      lineHeight: 1.1,
+                    }}
+                  >
                     Pick the correct answer
                   </h2>
-                  <p className="mt-1 text-xs text-lightBlue-100/85 sm:text-sm">
+                  <p
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: '0.85rem',
+                      color: 'rgba(232,197,181,0.85)',
+                      marginTop: 4,
+                    }}
+                  >
                     One last check before the ceremony can begin.
                   </p>
                 </div>
               </div>
 
-              <div className="p-4 text-lightBlue-950 sm:p-6">
+              <div className="p-4 sm:p-6" style={{ color: '#2C1A0E' }}>
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-lightBlue-100 text-lightBlue-950">
+                  <span
+                    className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl"
+                    style={{ background: 'rgba(201,150,58,0.12)', color: '#C9963A' }}
+                  >
                     <ShieldCheck size={20} />
                   </span>
                   <div>
-                    <p className="text-[0.68rem] font-black uppercase tracking-[0.2em] text-lightBlue-900/55">
+                    <p
+                      style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: '0.68rem',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.2em',
+                        color: 'rgba(44,26,14,0.5)',
+                      }}
+                    >
                       Question 1 of 1
                     </p>
-                    <h2 className="mt-1 text-lg font-black leading-snug sm:text-xl">
+                    <h2
+                      style={{
+                        fontFamily: "'Playfair Display', serif",
+                        fontSize: 'clamp(1rem, 3vw, 1.3rem)',
+                        fontWeight: 600,
+                        fontStyle: 'italic',
+                        color: '#2C1A0E',
+                        marginTop: 4,
+                        lineHeight: 1.3,
+                      }}
+                    >
                       Who receives lifetime VIP status in this renewal?
                     </h2>
                   </div>
@@ -261,7 +407,7 @@ export default function PuzzlePage() {
                     return (
                       <label
                         key={answer.id}
-                        className={`answer-option relative flex min-h-[4.5rem] items-center gap-3 rounded-xl p-3 text-left transition duration-200 ${
+                        className={`answer-option relative flex min-h-[4.5rem] items-center gap-3 rounded-none p-3 text-left transition duration-200 ${
                           selected ? 'answer-option-selected' : ''
                         }`}
                       >
@@ -277,17 +423,36 @@ export default function PuzzlePage() {
                           className="answer-radio"
                         />
                         <span
-                          className={`answer-check grid h-7 w-7 shrink-0 place-items-center rounded-lg transition ${
+                          className={`answer-check grid h-7 w-7 shrink-0 place-items-center transition ${
                             selected ? 'answer-check-selected' : ''
                           }`}
+                          style={{ borderRadius: 2 }}
                         >
                           <Check size={16} strokeWidth={3} />
                         </span>
                         <span>
-                          <span className="block text-sm font-black text-lightBlue-950">
+                          <span
+                            style={{
+                              display: 'block',
+                              fontFamily: "'Playfair Display', serif",
+                              fontSize: '0.95rem',
+                              fontWeight: 600,
+                              color: '#2C1A0E',
+                            }}
+                          >
                             {answer.label}
                           </span>
-                          <span className="mt-0.5 block text-xs leading-snug text-slate-500">
+                          <span
+                            style={{
+                              display: 'block',
+                              marginTop: 2,
+                              fontSize: '0.78rem',
+                              lineHeight: 1.4,
+                              color: 'rgba(61,35,20,0.6)',
+                              fontFamily: "'Cormorant Garamond', serif",
+                              fontStyle: 'italic',
+                            }}
+                          >
                             {answer.detail}
                           </span>
                         </span>
@@ -298,7 +463,13 @@ export default function PuzzlePage() {
 
                 {answerFeedback ? (
                   <p
-                    className="mt-4 rounded-xl border border-red-100 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700"
+                    className="mt-4 px-3 py-2 text-sm font-semibold"
+                    style={{
+                      borderRadius: 2,
+                      border: '1px solid rgba(196,145,122,0.3)',
+                      background: '#FDF1E6',
+                      color: '#8B4513',
+                    }}
                     role="status"
                   >
                     {answerFeedback.message}
@@ -306,7 +477,14 @@ export default function PuzzlePage() {
                 ) : null}
               </div>
 
-              <div className="flex items-center justify-between gap-3 border-t border-lightBlue-100 bg-gradient-to-b from-white to-lightBlue-50/70 px-4 py-3.5 text-lightBlue-950 sm:px-5">
+              <div
+                className="flex items-center justify-between gap-3 px-4 py-3.5 sm:px-5"
+                style={{
+                  borderTop: '1px solid rgba(201,150,58,0.2)',
+                  background: 'linear-gradient(to bottom, #FFFEF9, rgba(253,248,242,0.7))',
+                  color: '#2C1A0E',
+                }}
+              >
                 <button
                   type="button"
                   onClick={() => {
@@ -314,7 +492,15 @@ export default function PuzzlePage() {
                     setSelectedAnswer('');
                     setAnswerFeedback(null);
                   }}
-                  className="flex shrink-0 items-center gap-1 px-1 py-2 text-sm font-extrabold text-lightBlue-900/70 transition hover:text-lightBlue-950"
+                  className="flex shrink-0 items-center gap-1 px-1 py-2 transition"
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 700,
+                    fontSize: '0.9rem',
+                    color: 'rgba(44,26,14,0.65)',
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#2C1A0E'}
+                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(44,26,14,0.65)'}
                 >
                   <ChevronLeft size={18} />
                   Timeline
@@ -322,7 +508,13 @@ export default function PuzzlePage() {
                 <button
                   type="button"
                   onClick={verifyAnswer}
-                  className="blue-action-button rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-[0.08em] transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lightBlue-500 focus-visible:ring-offset-2 sm:px-6 sm:text-sm"
+                  className="blue-action-button rounded-none px-4 py-2.5 transition hover:-translate-y-0.5 focus-visible:outline-none sm:px-6"
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.12em',
+                  }}
                 >
                   Verify answer
                 </button>
@@ -331,7 +523,17 @@ export default function PuzzlePage() {
           )}
         </div>
 
-        <p className="mt-4 px-4 text-center text-[0.62rem] font-bold uppercase tracking-[0.16em] text-lightBlue-900/45 dark:text-lightBlue-100/40 sm:text-xs">
+        <p
+          className="mt-4 px-4 text-center"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: '0.62rem',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: '0.16em',
+            color: 'rgba(44,26,14,0.4)',
+          }}
+        >
           Private portal verification | {couple.husbandName} + {couple.wifeName}
         </p>
       </div>
@@ -340,7 +542,8 @@ export default function PuzzlePage() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="fixed inset-0 z-30 grid place-items-center bg-lightBlue-950/70 px-4 backdrop-blur-md"
+          className="fixed inset-0 z-30 grid place-items-center px-4"
+          style={{ background: 'rgba(44,26,14,0.72)', backdropFilter: 'blur(10px)' }}
           role="status"
           aria-live="polite"
         >
@@ -348,18 +551,21 @@ export default function PuzzlePage() {
             initial={{ opacity: 0, y: 18, scale: 0.92 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ type: 'spring', stiffness: 220, damping: 20 }}
-            className="ceremony-loader-card w-full max-w-sm rounded-[2rem] p-8 text-center shadow-2xl"
+            className="ceremony-loader-card w-full max-w-sm p-8 text-center shadow-2xl"
+            style={{ borderRadius: 4 }}
           >
             <div className="relative mx-auto grid h-28 w-28 place-items-center">
               <motion.span
                 animate={{ opacity: [0.5, 0], scale: [0.75, 1.35] }}
                 transition={{ duration: 1.15, repeat: Infinity, ease: 'easeOut' }}
-                className="absolute inset-0 rounded-full border-2 border-lightBlue-400"
+                className="absolute inset-0 rounded-full"
+                style={{ border: '2px solid rgba(196,145,122,0.6)' }}
               />
               <motion.span
                 animate={{ opacity: [0.35, 0], scale: [0.65, 1.15] }}
                 transition={{ duration: 1.15, delay: 0.18, repeat: Infinity, ease: 'easeOut' }}
-                className="absolute inset-0 rounded-full bg-lightBlue-200/60"
+                className="absolute inset-0 rounded-full"
+                style={{ background: 'rgba(232,197,181,0.4)' }}
               />
               <motion.div
                 animate={{ scale: [1, 1.24, 1, 1.14, 1] }}
@@ -370,10 +576,10 @@ export default function PuzzlePage() {
               </motion.div>
             </div>
 
-            <h2 className="ceremony-loader-title mt-5 text-2xl font-black">
+            <h2 className="ceremony-loader-title mt-5 text-2xl">
               Love verified
             </h2>
-            <p className="ceremony-loader-copy mt-2 font-semibold leading-relaxed">
+            <p className="ceremony-loader-copy mt-2 leading-relaxed">
               Preparing your renewal ceremony...
             </p>
 
@@ -383,7 +589,8 @@ export default function PuzzlePage() {
                   key={dot}
                   animate={{ opacity: [0.3, 1, 0.3], y: [0, -4, 0] }}
                   transition={{ duration: 0.9, delay: dot * 0.16, repeat: Infinity }}
-                  className="h-2.5 w-2.5 rounded-full bg-lightBlue-600"
+                  className="h-2.5 w-2.5 rounded-full"
+                  style={{ background: '#C4917A' }}
                 />
               ))}
             </div>
