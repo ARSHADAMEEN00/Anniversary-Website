@@ -13,7 +13,7 @@ export default function FloatingHearts() {
       {hearts.map((heart) => (
         <span
           key={heart.id}
-          className="absolute -bottom-12 heart-shadow animate-floaty text-pink-400 dark:text-pink-300"
+          className="absolute -bottom-12 heart-shadow animate-floaty text-lightBlue-500 dark:text-lightBlue-300"
           style={{
             left: heart.left,
             animationDelay: heart.delay,
@@ -22,7 +22,7 @@ export default function FloatingHearts() {
             opacity: heart.opacity,
           }}
         >
-          ❤️
+          ♥
         </span>
       ))}
     </div>

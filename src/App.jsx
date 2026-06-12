@@ -9,7 +9,7 @@ import { useLocalStorage } from './hooks/useLocalStorage.js';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useLocalStorage('renewal-theme', 'light');
+  const [theme, setTheme] = useLocalStorage('renewal-theme', 'dark');
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -21,7 +21,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-blush text-rosewood transition-colors duration-500 dark:bg-[#170817] dark:text-pink-50">
+    <div className="relative overflow-x-hidden bg-ice text-lightBlue-950 transition-colors duration-500 dark:bg-midnight dark:text-lightBlue-50">
       <BackgroundAura />
       <FloatingHearts />
       <ThemeToggle theme={theme} setTheme={setTheme} />

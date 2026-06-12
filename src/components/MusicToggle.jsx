@@ -8,7 +8,7 @@ export default function MusicToggle() {
     <button
       type="button"
       onClick={toggle}
-      className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/45 px-4 py-2 text-sm font-extrabold text-rose-700 shadow-lg backdrop-blur-xl transition hover:-translate-y-0.5 dark:border-white/15 dark:bg-white/10 dark:text-pink-50"
+      className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/55 px-4 py-2 text-sm font-extrabold text-lightBlue-900 shadow-lg backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/75 dark:border-lightBlue-200/20 dark:bg-lightBlue-900/20 dark:text-lightBlue-50"
     >
       <Music size={17} />
       {playing ? <Volume2 size={17} /> : <VolumeX size={17} />}

@@ -7,7 +7,7 @@ export function launchConfetti() {
     gravity: 0.8,
     decay: 0.93,
     startVelocity: 36,
-    colors: ['#fb7185', '#f9a8d4', '#fbbf24', '#c084fc', '#fff1f2'],
+    colors: ['#01579b', '#0288d1', '#29b6f6', '#81d4fa', '#e1f5fe'],
   };
 
   confetti({ ...defaults, particleCount: 90, origin: { x: 0.16, y: 0.7 }, angle: 58 });
@@ -29,7 +29,7 @@ export function launchFireworks(duration = 3600) {
         x: Math.random(),
         y: Math.random() * 0.55,
       },
-      colors: ['#f472b6', '#fb7185', '#fde68a', '#e879f9', '#ffffff'],
+      colors: ['#0277bd', '#03a9f4', '#4fc3f7', '#b3e5fc', '#ffffff'],
     });
 
     if (Date.now() < animationEnd) {

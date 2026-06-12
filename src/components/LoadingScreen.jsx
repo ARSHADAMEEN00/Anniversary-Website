@@ -17,7 +17,7 @@ export default function LoadingScreen() {
         >
           💌
         </motion.div>
-        <p className="text-sm font-bold uppercase tracking-[0.32em] text-pink-500 dark:text-pink-200">
+        <p className="text-sm font-bold uppercase tracking-[0.32em] text-lightBlue-900 dark:text-lightBlue-200">
           Portal Booting
         </p>
         <h1 className="mt-3 text-2xl font-black">Loading 1000 beautiful memories...</h1>
@@ -26,7 +26,7 @@ export default function LoadingScreen() {
             initial={{ x: '-100%' }}
             animate={{ x: '100%' }}
             transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }}
-            className="h-full w-2/3 rounded-full bg-gradient-to-r from-pink-400 via-rose-300 to-amber-300"
+            className="h-full w-2/3 rounded-full bg-gradient-to-r from-lightBlue-700 via-lightBlue-400 to-cyan-300"
           />
         </div>
       </div>

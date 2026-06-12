@@ -21,7 +21,7 @@ export async function downloadElementAsPdf(element, fileName = 'marriage-renewal
   const { jsPDF } = await import('jspdf');
   const canvas = await html2canvas(element, {
     scale: 2,
-    backgroundColor: '#fff7ed',
+    backgroundColor: '#fafdff',
     useCORS: true,
   });
 

@@ -1,6 +1,6 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { GripVertical } from 'lucide-react';
+import { Check } from 'lucide-react';
 import MemoryImage from './MemoryImage.jsx';
 
 export default function SortableMemoryCard({ moment, position, isCorrect }) {
@@ -12,41 +12,34 @@ export default function SortableMemoryCard({ moment, position, isCorrect }) {
     transform: CSS.Transform.toString(transform),
     transition,
     zIndex: isDragging ? 20 : undefined,
+    touchAction: 'none',
   };
 
   return (
     <article
       ref={setNodeRef}
       style={style}
-      className={`group relative overflow-hidden rounded-[1.7rem] border p-2 shadow-xl transition ${
-        isDragging ? 'scale-105 border-pink-300 bg-white/80 shadow-glow' : 'bg-white/55'
-      } ${
-        isCorrect
-          ? 'border-emerald-300/80 dark:border-emerald-300/40'
-          : 'border-white/60 dark:border-white/10'
-      } dark:bg-white/10`}
+      className={`group relative min-w-0 bg-lightBlue-100 transition ${
+        isDragging ? 'z-20 scale-[1.03] shadow-2xl' : ''
+      }`}
     >
       <button
         type="button"
-        className="absolute right-4 top-4 z-10 grid h-9 w-9 cursor-grab place-items-center rounded-full border border-white/70 bg-white/70 text-rose-500 shadow-lg backdrop-blur-md active:cursor-grabbing dark:border-white/15 dark:bg-black/20 dark:text-pink-100"
-        aria-label={`Drag ${moment.title}`}
+        className="relative block aspect-square w-full touch-none select-none cursor-grab overflow-hidden text-left outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-lightBlue-400 active:cursor-grabbing"
+        aria-label={`Drag ${moment.title}, currently in position ${position}`}
         {...attributes}
         {...listeners}
       >
-        <GripVertical size={18} />
+        <MemoryImage moment={moment} className="absolute inset-0 h-full w-full" rounded="" />
+
+        {isCorrect ? (
+          <Check
+            size={14}
+            strokeWidth={4}
+            className="absolute left-1.5 top-1.5 text-emerald-500 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]"
+          />
+        ) : null}
       </button>
-      <div className="relative">
-        <MemoryImage moment={moment} className="aspect-[4/5] w-full shadow-inner" />
-        <div className="absolute inset-x-0 bottom-0 rounded-b-3xl bg-gradient-to-t from-rosewood/80 via-rosewood/25 to-transparent p-4 text-white">
-          <p className="text-[0.68rem] font-black uppercase tracking-[0.24em] text-pink-100">
-            Position {position}
-          </p>
-          <h3 className="mt-1 text-base font-black leading-tight">{moment.title}</h3>
-        </div>
-      </div>
-      <p className="px-2 py-3 text-sm font-medium leading-relaxed text-rose-700 dark:text-pink-100">
-        {moment.description}
-      </p>
     </article>
   );
 }
