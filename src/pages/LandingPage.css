@@ -161,7 +161,10 @@ body::before {
 .polaroid:nth-child(1) { transform: rotate(-1.8deg); }
 .polaroid:nth-child(2) { transform: rotate(1.4deg); }
 .polaroid:nth-child(3) { transform: rotate(-0.8deg); }
-.polaroid:hover { transform: rotate(0deg) scale(1.02); }
+.polaroid:nth-child(4) { transform: rotate(2.1deg); }
+.polaroid:nth-child(5) { transform: rotate(-1.2deg); }
+.polaroid:nth-child(6) { transform: rotate(0.9deg); }
+.polaroid:hover { transform: rotate(0deg) scale(1.02); z-index: 10; }
 /* Washi tape */
 .washi {
   position: absolute;

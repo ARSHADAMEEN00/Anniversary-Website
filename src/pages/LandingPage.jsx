@@ -1,5 +1,6 @@
 import React from 'react';
 import { couple } from '../data/couple.js';
+import TornPaperEdge from '../components/TornPaperEdge.jsx';
 import './LandingPage.css';
 
 export default function LandingPage() {
@@ -56,6 +57,9 @@ export default function LandingPage() {
         </div>
       </div>
 
+      {/* RIPPED PAPER DIVIDER */}
+      <TornPaperEdge topColor="var(--espresso)" bottomColor="var(--ivory)" />
+
       {/* JOURNAL SPREAD */}
       <section className="journal-spread">
         <div className="spread-header">
@@ -95,6 +99,39 @@ export default function LandingPage() {
             </div>
             <div className="polaroid-caption">
               <span className="caption-text">Anniversary Trip</span>
+            </div>
+          </div>
+          {/* Card 4 */}
+          <div className="polaroid">
+            <div className="washi washi-sage" />
+            <div className="sticker" style={{ bottom: '40px', left: '10px' }}>🌿</div>
+            <div className="photo-placeholder bg-cream-grad">
+              <span className="photo-icon">📷</span>
+            </div>
+            <div className="polaroid-caption">
+              <span className="caption-text">First Home</span>
+            </div>
+          </div>
+          {/* Card 5 */}
+          <div className="polaroid">
+            <div className="washi washi-rose" />
+            <div className="sticker" style={{ top: '15px', right: '12px' }}>🍷</div>
+            <div className="photo-placeholder bg-mix-grad">
+              <span className="photo-icon">📷</span>
+            </div>
+            <div className="polaroid-caption">
+              <span className="caption-text">Late Night Talks</span>
+            </div>
+          </div>
+          {/* Card 6 */}
+          <div className="polaroid">
+            <div className="washi washi-gold" />
+            <div className="sticker" style={{ bottom: '45px', right: '10px' }}>🤍</div>
+            <div className="photo-placeholder" style={{ background: 'linear-gradient(135deg, var(--blush), var(--parchment))' }}>
+              <span className="photo-icon">📷</span>
+            </div>
+            <div className="polaroid-caption">
+              <span className="caption-text">Forever & Always</span>
             </div>
           </div>
         </div>
@@ -212,8 +249,11 @@ export default function LandingPage() {
         <p className="quote-text">
           In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine.
         </p>
-        <div className="quote-attr">— Maya Angelou</div>
+        <div className="quote-attr">— Anonymous</div>
       </section>
+
+      {/* RIPPED PAPER DIVIDER */}
+      <TornPaperEdge topColor="var(--espresso)" bottomColor="var(--ivory)" />
 
       {/* LOVE FOOTER */}
       <section className="love-footer">
