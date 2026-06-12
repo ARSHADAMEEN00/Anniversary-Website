@@ -29,16 +29,14 @@ export default function LandingPage() {
             const el = entry.target;
             el.classList.add('pinned');
 
-            // Get the animation duration from CSS custom property or default
-            const swingDuration = el.classList.contains('polaroid') ? 1200 : 1100;
+            const isPolaroid = el.classList.contains('polaroid');
+            const swingDuration = isPolaroid ? 1200 : 1100;
+            const delayProp = isPolaroid ? '--swing-delay' : '--note-delay';
             const delay = parseInt(
-              getComputedStyle(el).getPropertyValue(
-                el.classList.contains('polaroid') ? '--swing-delay' : '--note-delay'
-              ) || '0',
+              getComputedStyle(el).getPropertyValue(delayProp) || '0',
               10
             );
 
-            // After settle animation finishes, add idle sway
             setTimeout(() => {
               el.classList.add('idle-sway');
             }, swingDuration + delay + 200);
@@ -284,46 +282,91 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* TIMELINE */}
+      {/* TIMELINE — NOTICEBOARD */}
       <section className="timeline-section">
-        <div className="timeline-line" />
-        <div className="spread-header" style={{ marginBottom: '36px' }}>
+        <div className="tl-line" />
+        <div className="spread-header" style={{ marginBottom: '48px' }}>
           <div className="section-label">✦ our chapters</div>
           <h2 className="section-title">The Timeline of Us</h2>
           <div className="spread-rule" />
         </div>
-        <div className="timeline-item">
-          <div className="timeline-dot" />
-          <div className="timeline-content">
-            <span className="timeline-emoji">💍</span>
-            <div className="timeline-year">2025</div>
-            <div className="timeline-event">We said I do. The world stopped for a moment, just for us.</div>
+
+        {/* 2025 — The Wedding Day */}
+        <div className="tl-item">
+          <div className="tl-node">
+            <div className="tl-dot" style={{ background: 'var(--rose)', boxShadow: '0 0 0 4px var(--rose-light)' }} />
+            <div className="tl-year-label" style={{ background: 'var(--rose)' }}>2025</div>
+          </div>
+          <div className="tl-pin-card" style={{ '--card-tilt': '-1.8deg', '--pin-delay': '0ms', '--pin-color': 'var(--rose)' }}>
+            <div className="tl-pushpin" />
+            <div className="tl-photo">
+              <img src={firstPhotoImg} alt="Wedding Day" />
+            </div>
+            <div className="tl-card-body">
+              <span className="tl-card-emoji">💍</span>
+              <div className="tl-card-title">The Wedding Day</div>
+              <p className="tl-card-event">We said I do. The world stopped for a moment, just for us.</p>
+            </div>
           </div>
         </div>
-        <div className="timeline-item">
-          <div className="timeline-dot" style={{ background: 'var(--sage)', boxShadow: '0 0 0 3px var(--sage-light)' }} />
-          <div className="timeline-content">
-            <span className="timeline-emoji">🏠</span>
-            <div className="timeline-year" style={{ color: 'var(--sage)' }}>2020</div>
-            <div className="timeline-event">Our first home. Painted walls and second-hand furniture that felt like heaven.</div>
+
+        {/* 2020 — First Meet */}
+        <div className="tl-item">
+          <div className="tl-node">
+            <div className="tl-dot" style={{ background: 'var(--sage)', boxShadow: '0 0 0 4px var(--sage-light)' }} />
+            <div className="tl-year-label" style={{ background: 'var(--sage)' }}>2020</div>
+          </div>
+          <div className="tl-pin-card" style={{ '--card-tilt': '1.4deg', '--pin-delay': '100ms', '--pin-color': 'var(--sage)' }}>
+            <div className="tl-pushpin" />
+            <div className="tl-photo">
+              <img src={firstMeetImg} alt="First Meet" style={{ objectPosition: 'center top' }} />
+            </div>
+            <div className="tl-card-body">
+              <span className="tl-card-emoji">🏠</span>
+              <div className="tl-card-title">Our First Home</div>
+              <p className="tl-card-event">Our first home. Painted walls and second-hand furniture that felt like heaven.</p>
+            </div>
           </div>
         </div>
-        <div className="timeline-item">
-          <div className="timeline-dot" style={{ background: 'var(--gold)', boxShadow: '0 0 0 3px var(--gold-light)' }} />
-          <div className="timeline-content">
-            <span className="timeline-emoji">✈️</span>
-            <div className="timeline-year" style={{ color: 'var(--gold)' }}>2022</div>
-            <div className="timeline-event">First big trip together. You made every airport feel like an adventure.</div>
+
+        {/* 2022 — Anniversary Trip */}
+        <div className="tl-item">
+          <div className="tl-node">
+            <div className="tl-dot" style={{ background: 'var(--gold)', boxShadow: '0 0 0 4px var(--gold-light)' }} />
+            <div className="tl-year-label" style={{ background: 'var(--gold)' }}>2022</div>
+          </div>
+          <div className="tl-pin-card" style={{ '--card-tilt': '-1.1deg', '--pin-delay': '200ms', '--pin-color': 'var(--gold)' }}>
+            <div className="tl-pushpin" />
+            <div className="tl-photo-placeholder bg-gold-grad">
+              <span style={{ fontSize: '2.8rem', opacity: 0.35 }}>✈️</span>
+            </div>
+            <div className="tl-card-body">
+              <span className="tl-card-emoji">✈️</span>
+              <div className="tl-card-title">Anniversary Trip</div>
+              <p className="tl-card-event">First big trip together. You made every airport feel like an adventure.</p>
+            </div>
           </div>
         </div>
-        <div className="timeline-item">
-          <div className="timeline-dot" style={{ background: 'var(--rose)' }} />
-          <div className="timeline-content">
-            <span className="timeline-emoji">🌟</span>
-            <div className="timeline-year">2026</div>
-            <div className="timeline-event">Seven years deep, still learning why I love you more each morning.</div>
+
+        {/* 2026 — First Eid */}
+        <div className="tl-item">
+          <div className="tl-node">
+            <div className="tl-dot" style={{ background: 'var(--rose)', boxShadow: '0 0 0 4px var(--rose-light)' }} />
+            <div className="tl-year-label" style={{ background: 'var(--rose)' }}>2026</div>
+          </div>
+          <div className="tl-pin-card" style={{ '--card-tilt': '1.7deg', '--pin-delay': '300ms', '--pin-color': '#b08850' }}>
+            <div className="tl-pushpin" />
+            <div className="tl-photo">
+              <img src={firstEidImg} alt="First Eid" />
+            </div>
+            <div className="tl-card-body">
+              <span className="tl-card-emoji">🌙</span>
+              <div className="tl-card-title">First Eid Together</div>
+              <p className="tl-card-event">A blessed day, a beautiful memory, a forever kind of love.</p>
+            </div>
           </div>
         </div>
+
       </section>
 
       {/* COLLAGE SECTION */}
