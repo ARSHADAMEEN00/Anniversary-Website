@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { couple } from '../data/couple.js';
 import TornPaperEdge from '../components/TornPaperEdge.jsx';
 import WashiTape from '../components/WashiTape.jsx';
@@ -18,6 +18,41 @@ export default function LandingPage() {
   const diffDays = Math.floor(timeDiff / (1000 * 3600 * 24));
   const diffYears = Math.floor(diffDays / 365);
   const displayDays = diffDays.toLocaleString();
+
+  useEffect(() => {
+    const cards = document.querySelectorAll('.polaroid, .memory-card');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !entry.target.classList.contains('pinned')) {
+            const el = entry.target;
+            el.classList.add('pinned');
+
+            // Get the animation duration from CSS custom property or default
+            const swingDuration = el.classList.contains('polaroid') ? 1200 : 1100;
+            const delay = parseInt(
+              getComputedStyle(el).getPropertyValue(
+                el.classList.contains('polaroid') ? '--swing-delay' : '--note-delay'
+              ) || '0',
+              10
+            );
+
+            // After settle animation finishes, add idle sway
+            setTimeout(() => {
+              el.classList.add('idle-sway');
+            }, swingDuration + delay + 200);
+
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
