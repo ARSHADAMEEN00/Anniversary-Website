@@ -36,7 +36,7 @@ export default function LandingPage() {
             el.classList.add('pinned');
 
             const isPolaroid = el.classList.contains('polaroid');
-            const swingDuration = isPolaroid ? 1200 : 1100;
+            const swingDuration = isPolaroid ? 1800 : 1600;
             const delayProp = isPolaroid ? '--swing-delay' : '--note-delay';
             const delay = parseInt(
               getComputedStyle(el).getPropertyValue(delayProp) || '0',
