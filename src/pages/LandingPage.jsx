@@ -8,6 +8,12 @@ import DriedFlower from '../components/DriedFlower.jsx';
 import firstMeetImg from '../assets/Images/first_meet.png';
 import firstPhotoImg from '../assets/Images/first_photo.jpg';
 import firstEidImg from '../assets/Images/first_eid.jpg';
+import fav1Img from '../assets/Images/fav/fav_1.jpg';
+import fav2Img from '../assets/Images/fav/fav_2.jpg';
+import fav3Img from '../assets/Images/fav/fav_3.png';
+import fav4Img from '../assets/Images/fav/fav_4.jpeg';
+import fav5Img from '../assets/Images/fav/fav_5.jpeg';
+import fav6Img from '../assets/Images/fav/fav_6.jpeg';
 
 import './LandingPage.css';
 
@@ -114,22 +120,22 @@ export default function LandingPage() {
             <Paperclip top="-15px" left="20px" rotation="-12deg" />
             <DriedFlower top="30%" right="-30px" rotation="25deg" scale={0.7} />
             <div className="sticker" style={{ top: '10px', right: '10px' }}>🌹</div>
-            <div className="photo-placeholder bg-rose-grad">
-              <span className="photo-icon">📷</span>
+            <div className="photo-placeholder">
+              <img src={fav1Img} alt="The Wedding Day" className="polaroid-photo" />
             </div>
             <div className="polaroid-caption">
-              <span className="caption-text">The Wedding Day</span>
+              <span className="caption-text">The Eid Day</span>
             </div>
           </div>
           {/* Card 2 */}
           <div className="polaroid">
             <div className="washi washi-sage" />
             <div className="sticker" style={{ bottom: '46px', right: '8px' }}>🌊</div>
-            <div className="photo-placeholder bg-sage-grad">
-              <span className="photo-icon">📷</span>
+            <div className="photo-placeholder">
+              <img src={fav2Img} alt="Calicut Beach, 2020" className="polaroid-photo" />
             </div>
             <div className="polaroid-caption">
-              <span className="caption-text">Goa, 2020</span>
+              <span className="caption-text">Calicut Beach, Dec 2025</span>
             </div>
           </div>
           {/* Card 3 */}
@@ -137,41 +143,43 @@ export default function LandingPage() {
             <div className="washi washi-gold" />
             <Stamp top="65%" right="-10px" rotation="15deg" size="80px" />
             <div className="sticker" style={{ top: '12px', left: '10px' }}>✨</div>
-            <div className="photo-placeholder bg-gold-grad">
-              <span className="photo-icon">📷</span>
+            <div className="photo-placeholder">
+              <img src={fav3Img} alt="Anniversary Trip" className="polaroid-photo" style={{
+                objectPosition: '0 -40px',
+              }}/>
             </div>
             <div className="polaroid-caption">
-              <span className="caption-text">Anniversary Trip</span>
+              <span className="caption-text">Vava's Wedding Day</span>
             </div>
           </div>
           {/* Card 4 */}
           <div className="polaroid">
             <div className="washi washi-sage" />
             <div className="sticker" style={{ bottom: '40px', left: '10px' }}>🌿</div>
-            <div className="photo-placeholder bg-cream-grad">
-              <span className="photo-icon">📷</span>
+            <div className="photo-placeholder">
+              <img src={fav4Img} alt="First Home" className="polaroid-photo" />
             </div>
             <div className="polaroid-caption">
-              <span className="caption-text">First Home</span>
+              <span className="caption-text">@ T&T</span>
             </div>
           </div>
           {/* Card 5 */}
           <div className="polaroid">
             <div className="washi washi-rose" />
             <div className="sticker" style={{ top: '15px', right: '12px' }}>🍷</div>
-            <div className="photo-placeholder bg-mix-grad">
-              <span className="photo-icon">📷</span>
+            <div className="photo-placeholder">
+              <img src={fav5Img} alt="Late Night Talks" className="polaroid-photo" />
             </div>
             <div className="polaroid-caption">
-              <span className="caption-text">Late Night Talks</span>
+              <span className="caption-text">Beaches 🌊</span>
             </div>
           </div>
           {/* Card 6 */}
           <div className="polaroid">
             <div className="washi washi-gold" />
             <div className="sticker" style={{ bottom: '45px', right: '10px' }}>🤍</div>
-            <div className="photo-placeholder" style={{ background: 'linear-gradient(135deg, var(--blush), var(--parchment))' }}>
-              <span className="photo-icon">📷</span>
+            <div className="photo-placeholder">
+              <img src={fav6Img} alt="Forever & Always" className="polaroid-photo" />
             </div>
             <div className="polaroid-caption">
               <span className="caption-text">Forever & Always</span>
