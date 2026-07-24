@@ -9,6 +9,7 @@ import video5 from '../assets/videos/reel.mp4';
 import video6 from '../assets/videos/wedding.MP4';
 import video7 from '../assets/videos/VIDEO-2025-10-07-14-38-13.mp4';
 import video8 from '../assets/videos/VIDEO-2025-10-13-12-11-52.mp4';
+import video9 from '../assets/videos/groomtobe.mp4';
 
 /**
  * ===== CUSTOMIZE HERE =====
@@ -92,6 +93,42 @@ const REELS = [
     likes: 190,
     comments: 14,
     shares: 3,
+    pan: 'right',
+  },
+  {
+    id: 7,
+    poster: '',
+    video: video3,
+    username: 'Falooda United',
+    caption: 'Faloodaeeeeeee! ❤️',
+    audio: 'ambient sounds',
+    likes: 999,
+    comments: 145,
+    shares: 120,
+    pan: 'left',
+  },
+  {
+    id: 8,
+    poster: '',
+    video: video5,
+    username: 'Munnu',
+    caption: 'Special moments 💖',
+    audio: 'Our playlist',
+    likes: 101,
+    comments: 12,
+    shares: 40,
+    pan: 'right',
+  },
+   {
+    id: 8,
+    poster: '',
+    video: video9,
+    username: 'Groom',
+    caption: 'Special moments 💖',
+    audio: 'Our playlist',
+    likes: 101,
+    comments: 12,
+    shares: 40,
     pan: 'right',
   },
 ];
