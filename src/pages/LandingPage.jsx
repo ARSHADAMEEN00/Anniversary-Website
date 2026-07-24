@@ -20,6 +20,7 @@ import { showcaseData } from '../data/showcaseData.js';
 import TimelineStackedPhoto from '../components/TimelineStackedPhoto.jsx';
 import { timelineData } from '../data/timelineData.js';
 import ReelsShowcase from './ReelsShowcase.jsx';
+import FloatingCatIcons from '../components/FloatingCatIcons.jsx';
 
 import './LandingPage.css';
 
@@ -138,7 +139,8 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <>
+    <div className="landing-page-container">
+      <FloatingCatIcons />
       {/* NAV */}
       <nav className="nav">
         <div className="nav-brand">Our <span>Story</span></div>
@@ -507,7 +509,7 @@ export default function LandingPage() {
           <ReelsShowcase />
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
